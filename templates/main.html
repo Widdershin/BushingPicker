@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ 	<head>
+ 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300' rel='stylesheet' type='text/css'>
+ 		<link href="static/style.css" type="text/css" rel="stylesheet" />
+ 	</head>
+
+ 	<body>
+ 		<h1>Longboard Bushing Selector</h1>
+ 		<p> Enter your weight for a customized bushing setup! </p>
+ 		<form action="query">
+ 			Weight: <input name="weight" type="number" style="width: 50px">
+ 			<select name="weight_type">
+ 				<option value="kg">kg</option>
+ 				<option value="lb">lb</option>
+ 			</select>
+ 			<input type="submit" value="Submit">
+ 		</form>
+
+ 		{% if show_bushings %}
+ 		<h3>Bushings for a {{weight}} {{weight_type}} rider:</h3>
+ 		<div class="row">
+
+ 			{% for bushings in bushing_pairs %}
+
+ 			<span class="pair">
+ 				<h4>{{bushings[1]}}</h4>
+ 				<p> Roadside </p>
+ 				{% for bushing in bushings[0] %}
+ 				<div class="bushing" style="background-color: {{bg_colors[bushing]}}; color: {{text_colors[bushing]}};"> {{bushing}} </div>
+ 				{% endfor %}
+ 				<p> Boardside </p>
+ 			</span>
+
+ 			{% endfor %}
+	 		
+ 		</div>
+ 		<p>All bushings referred to on this website are Venom HPF barrels, easily available from all good longboard shops.</p>
+ 		<div class="footer">
+ 		<h3> Notes: </h3>
+ 		<p>Boardside and roadside refer to which side of the truck the bushing is placed on. Boardside is the side closest to your board, and roadside is the side closest to the road.</p>
+ 		<p> Remember to always run your front truck the same or softer than your back truck. Try running the soft option in the front, and medium in the back.</p>
+ 		{% endif %}
+ 			Made by <a href="http://widdersh.in">widdersh.in</a>
+ 		</div>
+ 	</body>
+</html>

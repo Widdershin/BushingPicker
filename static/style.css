@@ -1,0 +1,61 @@
+body
+{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-family: Source Sans Pro;
+	width: 35em;
+}
+
+.pair
+{
+	position: relative;
+	display: inline-block;
+	background-color: #DADADA;
+	margin: 10px;
+	padding-bottom: 10px;
+
+	border-radius: 5px;
+}
+
+.pair h4
+{
+	margin: 0.5em;
+}
+
+.pair p
+{
+	color: #666666;
+	font-size: 80%;
+	margin: -5px;
+}
+
+.bushing
+{
+	width: 30%;
+	
+	margin: 10px;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.row
+{
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+}
+
+.footer p, .footer h3
+{
+	text-align: justify;
+}
+
+.footer a:link
+{
+	color: #949494;
+}
+
+.footer a:visited
+{
+	color: #666666;
+}
