@@ -47,5 +47,8 @@ def weight_to_duro(weight, boardside=True):
 
 	return str(duro) + 'a'
 
+def run_app():
+        app.run()
+
 if __name__ == '__main__':
-	app.run(debug=True)
+	run_app()
