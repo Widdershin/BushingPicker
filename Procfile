@@ -1,1 +1,1 @@
-web: gunicorn run_app:app
+web: gunicorn bushings:app
