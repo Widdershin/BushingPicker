@@ -15,7 +15,7 @@ def query():
   if not weight.isdigit():
     return render_template("main.html", show_bushings=False, invalid=True)
 
-  bg_colors = {"81a": "#FF6600",  "85a": "#FFFF00", "87a": "#9900FF", "90a": "#FF0000", "93a": "#00CC00", "97a": "#FF00FF"}
+  bg_colors = {"78a": "#0000FF","81a": "#FF6600",  "85a": "#FFFF00", "87a": "#9900FF", "90a": "#FF0000", "93a": "#00CC00", "97a": "#FF00FF"}
 
   text_colors = dict((item, "#FFFFFF") for item in bg_colors)
   text_colors["85a"] = "#000000"
@@ -36,7 +36,7 @@ def query():
 
 def weight_to_duro(weight, boardside=True):
   """ Takes a weight in KG and returns an appropriate duro bushing """
-  bushings = [81, 85, 87, 90, 93, 97]
+  bushings = [78, 81, 85, 87, 90, 93, 97]
 
   if not boardside:
     weight -= 5
@@ -48,7 +48,7 @@ def weight_to_duro(weight, boardside=True):
   return str(duro) + 'a'
 
 def run_app():
-  app.run()
+  app.run(debug=True)
 
 if __name__ == '__main__':
   run_app()
