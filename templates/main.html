@@ -4,6 +4,7 @@
  		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300' rel='stylesheet' type='text/css'>
  		<link href="static/style.css" type="text/css" rel="stylesheet" />
  		<link rel="shortcut icon" href="static/favicon.png?v=3" type="image/png">
+ 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
  		<title>Longboard Bushing Picker</title>
  	</head>
 
@@ -11,40 +12,41 @@
  		<h1>Longboard Bushing Picker</h1>
  		<p> Enter your weight for a customized bushing setup! </p>
  		<form action="query">
- 			Weight: <input name="weight" type="number" style="width: 50px">
- 			<select name="weight_type">
+ 			Weight: <input name="weight" type="number" style="width: 50px" id="weight">
+ 			<select name="weight_type" id="weightType">
  				<option value="kg">kg</option>
  				<option value="lb">lb</option>
  			</select>
- 			<input class="submitbutton" type="submit" value="Submit">
+ 			<input class="submitbutton" type="submit" value="Submit" id="bushingSubmit">
  		</form>
 
- 		{% if invalid %}
- 		<h2> Invalid input. Please enter a number.</h2>
- 		{% endif %}
+ 		<div id="content">
+	 		{% if invalid %}
+	 		<h2> Invalid input. Please enter a number.</h2>
+	 		{% endif %}
 
- 		{% if show_bushings %}
- 		<h3>Bushings for a {{weight}} {{weight_type}} rider:</h3>
- 		<div class="row">
+	 		{% if show_bushings %}
+	 		<h3>Bushings for a {{weight}} {{weight_type}} rider:</h3>
+	 		<div class="row">
 
- 			{% for bushings in bushing_pairs %}
+	 			{% for bushings in bushing_pairs %}
 
- 			<span class="pair">
- 				<h4>{{bushings[1]}}</h4>
- 				<p> Roadside </p>
- 				{% for bushing in bushings[0] %}
- 				<div class="bushing" style="background-color: {{bg_colors[bushing]}}; color: {{text_colors[bushing]}};"> {{bushing}} </div>
- 				{% endfor %}
- 				<p> Boardside </p>
- 			</span>
+	 			<span class="pair">
+	 				<h4>{{bushings[1]}}</h4>
+	 				<p> Roadside </p>
+	 				{% for bushing in bushings[0] %}
+	 				<div class="bushing" style="background-color: {{bg_colors[bushing]}}; color: {{text_colors[bushing]}};"> {{bushing}} </div>
+	 				{% endfor %}
+	 				<p> Boardside </p>
+	 			</span>
 
- 			{% endfor %}
-	 		
+	 			{% endfor %}
+		 		
+	 		</div>
  		</div>
  		<div class="notes">
 	 		<p>All bushings referred to on this website are Venom HPF barrels, easily available from all good longboard shops.</p>
 	 		<h3> Notes: </h3>
-	 		<p>This tool currently assumes you are using a 50 degree RKP truck. If you are using a lower degree truck, you might need harder bushings.</p>
 	 		<p>Boardside and roadside refer to which side of the truck the bushing is placed on. Boardside is the side closest to your board, and roadside is the side closest to the road.</p>
  			<p> Remember to always run your front truck the same or softer than your back truck. Try running the soft option in the front, and medium in the back.</p>
  		</div>
@@ -54,6 +56,7 @@
  			Made by <a href="http://widdersh.in">Widdershin</a>
  			<p>This website is <a href="https://github.com/Widdershin/BushingPicker">open source</a>. Get hacking!</p>
  		</div>
+ 		<script src="static/script.js"></script>
  	</body>
  	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
