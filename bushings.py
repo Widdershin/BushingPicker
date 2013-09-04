@@ -41,7 +41,10 @@ def weight_to_duro(weight, boardside=True):
   if not boardside:
     weight -= 5
 
-  approx_duro = ( (weight - 30) / 4.0) + 79
+  weight = weight - 40
+  if weight < 0:
+    weight = 0
+  approx_duro = ((weight) ** 0.66 ) + 79
 
   duro = min(bushings, key=lambda x:abs(x-approx_duro))
 
