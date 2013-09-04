@@ -32,7 +32,7 @@ def query():
   for column in columns:
     bushing_pairs.append([[weight_to_duro(weight + column[1], boardside=False), weight_to_duro(weight + column[1], boardside=True)], column[0]])
 
-  return render_template("main.html", show_bushings=True, invalid=False, bushing_pairs=bushing_pairs, bg_colors=bg_colors, weight = request.values['weight'], weight_type = request.values['weight_type'], text_colors=text_colors)
+  return render_template("main.html", show_bushings=True, invalid=False, bushing_pairs=bushing_pairs, bg_colors=bg_colors, weight = int(request.values['weight']), weight_type = weight_type, text_colors=text_colors)
 
 def weight_to_duro(weight, boardside=True):
   """ Takes a weight in KG and returns an appropriate duro bushing """
