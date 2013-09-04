@@ -17,6 +17,10 @@
  			<input type="submit" value="Submit">
  		</form>
 
+ 		{% if invalid %}
+ 		<h2> Invalid input. Please enter a number.</h2>
+ 		{% endif %}
+
  		{% if show_bushings %}
  		<h3>Bushings for a {{weight}} {{weight_type}} rider:</h3>
  		<div class="row">
@@ -35,13 +39,17 @@
  			{% endfor %}
 	 		
  		</div>
- 		<p>All bushings referred to on this website are Venom HPF barrels, easily available from all good longboard shops.</p>
- 		<div class="footer">
- 		<h3> Notes: </h3>
- 		<p>Boardside and roadside refer to which side of the truck the bushing is placed on. Boardside is the side closest to your board, and roadside is the side closest to the road.</p>
- 		<p> Remember to always run your front truck the same or softer than your back truck. Try running the soft option in the front, and medium in the back.</p>
+ 		<div class="notes">
+	 		<p>All bushings referred to on this website are Venom HPF barrels, easily available from all good longboard shops.</p>
+	 		<h3> Notes: </h3>
+	 		<p>Boardside and roadside refer to which side of the truck the bushing is placed on. Boardside is the side closest to your board, and roadside is the side closest to the road.</p>
+ 			<p> Remember to always run your front truck the same or softer than your back truck. Try running the soft option in the front, and medium in the back.</p>
+ 		</div>
  		{% endif %}
- 			Made by <a href="http://widdersh.in">widdersh.in</a>
+ 		<div class="footer">
+ 			<br>
+ 			Made by <a href="http://widdersh.in">Widdershin</a>
+ 			<p>Powered by Python and Flask</p>
  		</div>
  	</body>
 </html>

@@ -45,9 +45,14 @@ body
 	padding-right: 2.5%;
 }
 
-.footer p, .footer h3
+.notes
 {
 	text-align: justify;
+}
+
+.footer
+{
+	color: #666666;
 }
 
 .footer a:link
