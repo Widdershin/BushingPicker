@@ -56,7 +56,6 @@ def query():
   for item in items_to_test:
     i = 1
     while bushing_pairs[item].compare_pairs(bushing_pairs[1]) and bushing_pairs[item].roadside != min_duro and bushing_pairs[item].boardside != max_duro:
-      print "changing {}".format(item)
       bushing_pairs[item] = BushingPair(weight + (offset + i) * columns[item][1], columns[item][0])
       i += 2
 
