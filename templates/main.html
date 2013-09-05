@@ -29,12 +29,12 @@
 	 		<h3>Bushings for a {{weight}} {{weight_type}} rider:</h3>
 	 		<div class="row">
 
-	 			{% for bushings in bushing_pairs %}
+	 			{% for bushing_pair in bushing_pairs %}
 
 	 			<span class="pair">
-	 				<h4>{{bushings[1]}}</h4>
+	 				<h4>{{bushing_pair.label}}</h4>
 	 				<p> Roadside </p>
-	 				{% for bushing in bushings[0] %}
+	 				{% for bushing in bushing_pair.bushings %}
 	 				<div class="bushing" style="background-color: {{bg_colors[bushing]}}; color: {{text_colors[bushing]}};"> {{bushing}} </div>
 	 				{% endfor %}
 	 				<p> Boardside </p>
