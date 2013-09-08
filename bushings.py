@@ -1,6 +1,4 @@
 from flask import Flask, render_template, request
-import unittest
-import doctest
 
 class BushingPair(object):
   """An object to represent a pair of bushings"""
@@ -15,15 +13,6 @@ class BushingPair(object):
   def compare_pairs(self, other):
     """
     Returns true if self and other have the same duro bushings
-    >>> a = BushingPair(70, "TestA")
-    >>> b = BushingPair(67, "TestB")
-    >>> a.compare_pairs(b)
-    True
-
-    >>> a = BushingPair(70, "TestA")
-    >>> b = BushingPair(90, "TestB")
-    >>> a.compare_pairs(b)
-    False
     """
     return (self.boardside == other.boardside and self.roadside == other.roadside)
 
@@ -77,18 +66,6 @@ def query():
 def weight_to_duro(weight, boardside=True):
   """ 
   Takes a weight in KG and returns an appropriate duro bushing. 
-
-  >>> weight_to_duro(75)
-  '90a'
-
-  >>> weight_to_duro(75, boardside=False)
-  '87a'
-
-  >>> weight_to_duro(300)
-  '97a'
-
-  >>> weight_to_duro(20)
-  '78a'
   """
 
   bushings = [78, 81, 85, 87, 90, 93, 97]
