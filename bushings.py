@@ -82,9 +82,5 @@ def weight_to_duro(weight, boardside=True):
 
   return str(duro) + 'a'
 
-def run_app():
-  app.run(debug=True)
-
 if __name__ == '__main__':
-  doctest.testmod()
-  run_app()
+  app.run(debug=True)

@@ -1,6 +1,8 @@
 BushingPicker
 =============
 
+[![Build Status](https://travis-ci.org/[Widdershin]/[BushingPicker].png)](https://travis-ci.org/[Widdershin]/[BushingPicker])
+
 A website to generate customized bushing setups for longboard trucks!
 
 Powered by Flask.
