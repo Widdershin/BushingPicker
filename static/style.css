@@ -13,6 +13,7 @@ body
 	border: none;
 	border-radius: 3px;
 	padding: 2px;
+	margin: 8px;
 }
 
 .submitbutton:hover

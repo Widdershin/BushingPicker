@@ -18,14 +18,17 @@ class BushingPair(object):
 
 app = Flask(__name__)
 
+trucks = {"Randals" : 0, "Paris" : 5, "Calibers" : -5}
+
 @app.route('/')
 def main():
-  return render_template("main.html", show_bushings=False, invalid=False)
+  return render_template("main.html", show_bushings=False, trucks=trucks.keys())
 
 @app.route('/query', methods=['GET'])
 def query():
   weight = request.values['weight']
   weight_type = request.values['weight_type']
+  truck = request.values['truck']
 
   if not weight.isdigit():
     return render_template("main.html", show_bushings=False, invalid=True)
@@ -39,6 +42,8 @@ def query():
   
   if weight_type == "lb":
     weight *= .453
+
+  weight += trucks[truck]
 
   bushing_pairs = []
 
@@ -60,7 +65,9 @@ def query():
       bushing_pairs[item] = BushingPair(weight + (offset + i) * columns[item][1], columns[item][0])
       i += 2
 
-  return render_template("main.html", show_bushings=True, invalid=False, bushing_pairs=bushing_pairs, bg_colors=bg_colors, weight = int(request.values['weight']), weight_type = weight_type, text_colors=text_colors)
+  return render_template("main.html", show_bushings=True, invalid=False, bushing_pairs=bushing_pairs,
+                        bg_colors=bg_colors, weight = int(request.values['weight']), weight_type = weight_type,
+                        text_colors=text_colors, current_truck=truck)
 
 
 def weight_to_duro(weight, boardside=True):

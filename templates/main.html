@@ -17,6 +17,14 @@
  				<option value="kg">kg</option>
  				<option value="lb">lb</option>
  			</select>
+ 			<br>
+ 			Trucks: 
+ 			<select name="trucks" id="trucks">
+ 				{% for truck in trucks %}
+ 				<option value="{{truck}}">{{truck}}</option>
+ 				{% endfor %}
+ 			</select>
+ 			<br>
  			<input class="submitbutton" type="submit" value="Submit" id="bushingSubmit">
  		</form>
 
@@ -26,7 +34,7 @@
 	 		{% endif %}
 
 	 		{% if show_bushings %}
-	 		<h3>Bushings for a {{weight}} {{weight_type}} rider:</h3>
+	 		<h3>Bushings for a {{weight}} {{weight_type}} rider on {{current_truck}}:</h3>
 	 		<div class="row">
 
 	 			{% for bushing_pair in bushing_pairs %}
