@@ -3,6 +3,8 @@ BushingPicker
 
 [![Build Status](https://travis-ci.org/Widdershin/BushingPicker.png)](https://travis-ci.org/Widdershin/BushingPicker)
 
+This project is live at [bushingpicker.com](http://bushingpicker.com).
+
 A website to generate customized bushing setups for longboard trucks!
 
 Powered by Flask.
