@@ -33,7 +33,7 @@ def query():
   bg_colors = {"78a": "#0000FF","81a": "#FF6600",  "85a": "#FFFF00", "87a": "#9900FF", "90a": "#FF0000", "93a": "#00CC00", "95a": "#CCECB8", "97a": "#FF00FF"}
 
   text_colors = dict((item, "#FFFFFF") for item in bg_colors)
-  text_colors["85a"] = "#000000"
+  text_colors["85a"] = text_colors["85a"] = "#000000"
 
   weight = int(weight)
   
