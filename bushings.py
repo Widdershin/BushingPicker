@@ -30,7 +30,7 @@ def query():
   if not weight.isdigit():
     return render_template("main.html", show_bushings=False, invalid=True)
 
-  bg_colors = {"78a": "#0000FF","81a": "#FF6600",  "85a": "#FFFF00", "87a": "#9900FF", "90a": "#FF0000", "93a": "#00CC00", "97a": "#FF00FF"}
+  bg_colors = {"78a": "#0000FF","81a": "#FF6600",  "85a": "#FFFF00", "87a": "#9900FF", "90a": "#FF0000", "93a": "#00CC00", "95a": "#CCECB8", "97a": "#FF00FF"}
 
   text_colors = dict((item, "#FFFFFF") for item in bg_colors)
   text_colors["85a"] = "#000000"
