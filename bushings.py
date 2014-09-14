@@ -68,7 +68,7 @@ def weight_to_duro(weight, boardside=True):
   Takes a weight in KG and returns an appropriate duro bushing. 
   """
 
-  bushings = [78, 81, 85, 87, 90, 93, 97]
+  bushings = [78, 81, 85, 87, 90, 93, 95, 97]
 
   if not boardside:
     weight -= 5
